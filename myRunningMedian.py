@@ -3,8 +3,8 @@ from math import ceil
 class Element:
 	def __init__(self, data):
 		self.data = data
-		self.leftsubtree_count = 0 # node itself
-		self.rightsubtree_count = 0 # node itself
+		self.leftsubtree_count = 0
+		self.rightsubtree_count = 0
 		self.right = None
 		self.left = None
 
@@ -20,7 +20,6 @@ class BST_median:
 		else:
 			tempPointer = self.root
 			while(1):
-				# tempPointer.subtree_count = tempPointer.subtree_count + 1
 				if(data < tempPointer.data):
 					tempPointer.leftsubtree_count = tempPointer.leftsubtree_count + 1
 					if(tempPointer.left != None):
@@ -58,7 +57,7 @@ class BST_median:
 			index_to_look_for = median_elements.index(None) if None in median_elements else -1
 			if(DEBUG): print(index_to_look_for, median_indexes[index_to_look_for], median_indexes,median_elements)
 			if(index_to_look_for != -1):
-				if(median_indexes[index_to_look_for] < node_index): #when we are done with 0... we go for 1 :)
+				if(median_indexes[index_to_look_for] < node_index):
 					tempPointer = tempPointer.left
 					if(tempPointer != None):
 						node_index = tempPointer.leftsubtree_count + node_index_before_right_subtree + 1

@@ -37,7 +37,7 @@ number_of_commands = 0
 
 while(1):
     try:
-        number_of_commands = eval(input()) # try except!
+        number_of_commands = eval(input()) 
         break
     except:
         print("enter a number")
